@@ -2,9 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Companies;
-use App\Models\Language;
-use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,8 +13,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Companies::factory(10)->create();
-        Language::factory(10)->create();
+        $this->call(CompaniesSeeder::class);
+        $this->call(LanguageSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(PostSeeder::class);
+        $this->call(FileSeeder::class);
     }
 }
