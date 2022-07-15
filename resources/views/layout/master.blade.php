@@ -1,25 +1,33 @@
-<html lang="en" class="menuitem-active">
+<!DOCTYPE html>
+<html lang="en">
 
+
+<!-- Mirrored from coderthemes.com/hyper/saas/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jul 2022 02:23:57 GMT -->
 <head>
-    <meta charset="utf-8">
-    <title>Dashboard | Hyper - Responsive Bootstrap 5 Admin Dashboard</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description">
-    <meta content="Coderthemes" name="author">
+    <meta charset="utf-8" />
+    <title>{{$title ?? ''}} | {{config('app.name')}}</title>
+{{--    <meta name="viewport" content="width=device-width, initial-scale=1.0">--}}
+{{--    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />--}}
+{{--    <meta content="Coderthemes" name="author" />--}}
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset('images/favicon.ico')}}">
 
+    <!-- third party css -->
+{{--    <link href="assets/css/vendor/jquery-jvectormap-1.2.2.css" rel="stylesheet" type="text/css" />--}}
+    <!-- third party css end -->
+
     <!-- App css -->
-    <link href="{{asset('css/app.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="{{asset('css/icons.min.css')}}" rel="stylesheet" type="text/css" id="app-style">
+    <link href="{{asset('css/app.min.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('css/icons.min.css')}}" rel="stylesheet" type="text/css" id="app-style"/>
+
 </head>
 
 <body class="loading" data-layout-color="light" data-leftbar-theme="dark" data-layout-mode="fluid" data-rightbar-onstart="true">
 <!-- Begin page -->
 <div class="wrapper">
-
-
+    <!-- ========== Left Sidebar Start ========== -->
     @include('layout.siderbar')
+    <!-- Left Sidebar End -->
 
     <!-- ============================================================== -->
     <!-- Start Page Content here -->
@@ -32,7 +40,7 @@
             <!-- end Topbar -->
 
             <!-- Start Content-->
-
+            @yield('content')
             <!-- container -->
 
         </div>
@@ -53,8 +61,7 @@
 <!-- END wrapper -->
 
 <!-- Right Sidebar -->
-
-
+<div class="rightbar-overlay"></div>
 <!-- /End-bar -->
 
 <!-- bundle -->
@@ -62,34 +69,15 @@
 <script src="{{asset('js/app.min.js')}}"></script>
 
 <!-- third party js -->
+{{--<script src="assets/js/vendor/apexcharts.min.js"></script>--}}
+{{--<script src="assets/js/vendor/jquery-jvectormap-1.2.2.min.js"></script>--}}
+{{--<script src="assets/js/vendor/jquery-jvectormap-world-mill-en.js"></script>--}}
 <!-- third party js ends -->
 
 <!-- demo app -->
+{{--<script src="assets/js/pages/demo.dashboard.js"></script>--}}
 <!-- end demo js-->
-
-<svg id="SvgjsSvg1001" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1"
-     xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev"
-     style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;">
-    <defs id="SvgjsDefs1002"></defs>
-    <polyline id="SvgjsPolyline1003" points="0,0"></polyline>
-    <path id="SvgjsPath1004" d="M0 0 "></path>
-</svg>
-<div class="daterangepicker ltr single opensright">
-    <div class="ranges"></div>
-    <div class="drp-calendar left single" style="display: block;">
-        <div class="calendar-table"></div>
-        <div class="calendar-time" style="display: none;"></div>
-    </div>
-    <div class="drp-calendar right" style="display: none;">
-        <div class="calendar-table"></div>
-        <div class="calendar-time" style="display: none;"></div>
-    </div>
-    <div class="drp-buttons"><span class="drp-selected"></span>
-        <button class="cancelBtn btn btn-sm btn-default" type="button">Cancel</button>
-        <button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">Apply</button>
-    </div>
-</div>
-<div class="jvectormap-label"></div>
 </body>
 
+<!-- Mirrored from coderthemes.com/hyper/saas/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 12 Jul 2022 02:24:33 GMT -->
 </html>

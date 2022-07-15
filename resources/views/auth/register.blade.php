@@ -39,6 +39,15 @@
                 <h4 class="mt-0">Free Sign Up</h4>
                 <p class="text-muted mb-4">Don't have an account? Create your account, it takes less than a minute</p>
 
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach( $errors->all() as $errors)
+                                <li>{{$errors}}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <!-- form -->
                 <form action="{{route('registering')}}" method="POST">
                     @csrf
@@ -66,13 +75,23 @@
                         <label for="password" class="form-label">Password</label>
                         <input class="form-control" type="password" required id="password" placeholder="Enter your password" >
                     </div>
-                    <div class="mb-3">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="checkbox-signup">
-                            <label class="form-check-label" for="checkbox-signup">I accept <a href="javascript: void(0);" class="text-muted">Terms and Conditions</a></label>
+                    <div class="mt-3">
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="applicant" name="role" class="form-check-input" value="1" checked>
+                            <label class="form-check-label" for="applicant">Applicant</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input type="radio" id="hr" name="role" class="form-check-input" value="2">
+                            <label class="form-check-label" for="hr">HR</label>
                         </div>
                     </div>
-                    <div class="mb-0 d-grid text-center">
+{{--                    <div class="mb-3">--}}
+{{--                        <div class="form-check">--}}
+{{--                            <input type="checkbox" class="form-check-input" id="checkbox-signup">--}}
+{{--                            <label class="form-check-label" for="checkbox-signup">I accept <a href="javascript: void(0);" class="text-muted">Terms and Conditions</a></label>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+                    <div class="mb-0 d-grid text-center mt-3">
                         <button class="btn btn-primary" type="submit"><i class="mdi mdi-account-circle"></i> Sign Up </button>
                     </div>
                     <!-- social-->
