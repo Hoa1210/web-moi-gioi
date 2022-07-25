@@ -2,7 +2,11 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6">
-                2022 - <script>document.write(new Date().getFullYear())</script> © {{config('app.name')}}
+                2022 -
+                <script>
+                    let y = new Date().getFullYear();
+                    document.write(y.toString());
+                </script> © {{config('app.name')}}
             </div>
             <div class="col-md-6">
                 <div class="text-md-end footer-links d-none d-md-block">

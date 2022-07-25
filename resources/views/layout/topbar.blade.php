@@ -106,7 +106,7 @@
                             <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0">
                                     <div class="notify-icon">
-                                        <img src="assets/images/users/avatar-2.jpg" class="img-fluid rounded-circle" alt="" />
+                                        <img src="{{asset('images/users/avatar-2.jpg')}}" class="img-fluid rounded-circle" alt="" />
                                     </div>
                                 </div>
                                 <div class="flex-grow-1 text-truncate ms-2">
@@ -144,7 +144,7 @@
                             <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0">
                                     <div class="notify-icon">
-                                        <img src="assets/images/users/avatar-4.jpg" class="img-fluid rounded-circle" alt="" />
+                                        <img src="{{asset('images/users/avatar-4.jpg')}}" class="img-fluid rounded-circle" alt="" />
                                     </div>
                                 </div>
                                 <div class="flex-grow-1 text-truncate ms-2">
@@ -264,7 +264,7 @@
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                     <div class="d-flex">
-                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-2.jpg" alt="Generic placeholder image" height="32">
+                        <img class="d-flex me-2 rounded-circle" src="{{asset('images/users/avatar-2.jpg')}}" alt="Generic placeholder image" height="32">
                         <div class="w-100">
                             <h5 class="m-0 font-14">Erwin Brown</h5>
                             <span class="font-12 mb-0">UI Designer</span>
@@ -275,7 +275,7 @@
                 <!-- item-->
                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                     <div class="d-flex">
-                        <img class="d-flex me-2 rounded-circle" src="assets/images/users/avatar-5.jpg" alt="Generic placeholder image" height="32">
+                        <img class="d-flex me-2 rounded-circle" src="{{asset('images/users/avatar-5.jpg')}}" alt="Generic placeholder image" height="32">
                         <div class="w-100">
                             <h5 class="m-0 font-14">Jacob Deo</h5>
                             <span class="font-12 mb-0">Developer</span>

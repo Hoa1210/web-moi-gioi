@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Imports\PostImpost;
 use App\Models\Companies;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -38,6 +39,6 @@ class PostController extends Controller
     }
 
     public function importCsv(Request $request){
-        Excel::import(new Post(), $request);
+        Excel::import(new PostImpost(), $request->file('file'));
     }
 }

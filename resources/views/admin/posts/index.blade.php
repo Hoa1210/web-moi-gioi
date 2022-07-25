@@ -7,8 +7,8 @@
                 <a href="{{route('admin.posts.create')}}" class="btn btn-primary">
                     Create
                 </a>
-                <label for="cvs" class="btn btn-info">Import CSV</label>
-                <input type="file" name="cvs" id="cvs" class="d-none" accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+                <label for="csv" class="btn btn-info">Import CSV</label>
+                <input type="file" name="csv" id="csv" class="d-none" accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
             </div>
             <div class="card-body">
                 <table class="table table-striped" id="table-data">
@@ -35,21 +35,22 @@
 @push('js')
 <script>
     $(document).ready(function() {
-        // {{--$.ajax({--}}
-        // {{--  url: '{{route('api.posts')}}',--}}
-        // {{--  dataType: 'json',--}}
-        // {{--    data: {param1: 'value1'},--}}
-        // {{--})--}}
-        // {{--.success(function(response){--}}
-        // {{--})--}}
-        // {{--.error(function(response){--}}
-        // {{--    // console.log("error");--}}
-        // {{--})--}}
+         {{--$.ajax({--}}
+         {{--  url: '{{route('api.posts')}}',--}}
+         {{--  dataType: 'json',--}}
+         {{--    data: {param1: 'value1'},--}}
+         {{--})--}}
+         {{--.success(function(response){--}}
+         {{--})--}}
+         {{--.error(function(response){--}}
+         {{--    // console.log("error");--}}
+         {{--})--}}
 
-        $("#csv").change(function() {
-            const formData = new FormData($(this)[0]);
+        $("#csv").change(function(event) {
+            let formData = new FormData();
+            formData.append('file', $(this)[0].files[0])
             $.ajax({
-                url: '{{route('admin.posts.import_csv ') }}',
+                url: '{{route('admin.posts.import_csv') }}',
                 type: 'POST',
                 dataType: 'json',
                 enctype: 'multipart/form-data',
